@@ -8,21 +8,23 @@ For more information on Areion, visit: https://eprint.iacr.org/2023/794
 ## Support Architecture
 To run this software, the following environmental requirements are necessary.
 - SIMD
-- x86-64 architecture (with AES-NI support)
+- Aarch64 architecture (with AES support)
 
 We have confirmed that this software can be built and executed on the following OS.
-- Ubuntu 20.04
+- Fedora 41
 
-Note. Ubuntu is a registered trademark or trademark of Canonical Ltd. in the United States and other countries.
+Note. Fedora is a registered trademark of Red Hat Inc. in the United States and other countries.
 
 ## How to build
 
 ```
-$ sudo apt update
-$ sudo apt install --no-install-recommends make cmake gcc g++
+$ sudo dnf update
+$ sudo dnf -y install make cmake gcc gcc-g++
 $ mkdir build
 $ cd build
-$ cmake ..
+$ cmake -DCMAKE_BUILD_TYPE=NONE \
+  -DCMAKE_CXX_FLAGS=-march=armv8-a+fp+simd+crypto+crc \
+  -DCMAKE_C_FLAGS=-march=armv8-a+fp+simd+crypto+crc ..
 $ make
 ```
 
@@ -39,6 +41,13 @@ $ ./areion-benchmark
 # License
 The source code is copyright (c) GMO Cybersecurity by Ierae, Inc., and provided under the MIT license.
 The full text is included in the file LICENSE.txt.
+
+To use Arm Neon SSE instructions [sse2neon](https://github.com/DLTcollab/sse2neon) is used. This
+header only libray is available under the MIT license.
+
+The benchmark timing code is based on the blog post 
+[Counting CPU Cyles with ARM PMU](https://xyxj1024.github.io/blog/arm-pmu)
+by Xingjian Xuanyuan.
 
 ## Reference
 The cryptographic algorithms implemented in this software were proposed in the following research paper.

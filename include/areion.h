@@ -6,7 +6,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <immintrin.h>
+#include <sse2neon.h>
 
 //
 // areion primitives

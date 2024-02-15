@@ -3,7 +3,7 @@
 /* see: https://eprint.iacr.org/2023/794 */
 
 #include <stdint.h>
-#include <immintrin.h>
+#include <sse2neon.h>
 
 #include "areion.h"
 
