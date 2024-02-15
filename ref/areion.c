@@ -179,8 +179,8 @@ void inverse_areion_512(__m128i dst[4], const __m128i src[4])
 
 void permute_areion_256u8(uint8_t dst[32], const uint8_t src[32])
 {
-    const __m128i_u *src_p = (const __m128i_u *)src;
-    __m128i_u *dst_p = (__m128i_u *)dst;
+    const __m128i *src_p = (const __m128i *)src;
+    __m128i *dst_p = (__m128i *)dst;
 
     __m128i x[2] = {
         _mm_loadu_si128(&src_p[0]),
@@ -194,8 +194,8 @@ void permute_areion_256u8(uint8_t dst[32], const uint8_t src[32])
 
 void inverse_areion_256u8(uint8_t dst[32], const uint8_t src[32])
 {
-    const __m128i_u *src_p = (const __m128i_u *)src;
-    __m128i_u *dst_p = (__m128i_u *)dst;
+    const __m128i *src_p = (const __m128i *)src;
+    __m128i *dst_p = (__m128i *)dst;
 
     __m128i x[2] = {
         _mm_loadu_si128(&src_p[0]),
@@ -209,8 +209,8 @@ void inverse_areion_256u8(uint8_t dst[32], const uint8_t src[32])
 
 void permute_areion_512u8(uint8_t dst[64], const uint8_t src[64])
 {
-    const __m128i_u *src_p = (const __m128i_u *)src;
-    __m128i_u *dst_p = (__m128i_u *)dst;
+    const __m128i *src_p = (const __m128i *)src;
+    __m128i *dst_p = (__m128i *)dst;
 
     __m128i x[4] = {
         _mm_loadu_si128(&src_p[0]),
@@ -228,8 +228,8 @@ void permute_areion_512u8(uint8_t dst[64], const uint8_t src[64])
 
 void inverse_areion_512u8(uint8_t dst[64], const uint8_t src[64])
 {
-    const __m128i_u *src_p = (const __m128i_u *)src;
-    __m128i_u *dst_p = (__m128i_u *)dst;
+    const __m128i *src_p = (const __m128i *)src;
+    __m128i *dst_p = (__m128i *)dst;
 
     __m128i x[4] = {
         _mm_loadu_si128(&src_p[0]),
